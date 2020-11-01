@@ -43,14 +43,16 @@ int main(void)
 
   USART2_RegisterCallback(process_serial_data);
 
-  char tx_data = 'a';
+  //char tx_data = '1';
 
   while (1)
   {
-	  LL_USART_TransmitData8(USART2, tx_data++);
-	  tx_data == ('z' + 1) ? tx_data = 'a' : tx_data;
-
-	  LL_mDelay(50);
+	  if((LL_GPIO_ReadInputPort(GPIOB) & (1 << 3)) >> 3){
+		  LL_USART_TransmitData8(USART2, '1');
+	  }else{
+		  LL_USART_TransmitData8(USART2, '0');
+	  }
+	  LL_mDelay(1000);
   }
 }
 
@@ -111,6 +113,7 @@ void process_serial_data(uint8_t ch)
 
 			count = 0;
 			return;
+
 		}
 	}
 }
