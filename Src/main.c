@@ -44,9 +44,7 @@ int main(void)
 
   USART2_RegisterCallback(process_serial_data);
 
-  //char tx_data = '1';
-
-  while (1)
+   while (1)
   {
 	  if((LL_GPIO_ReadInputPort(GPIOB) & (1 << 3)) >> 3){
 		  LL_USART_TransmitData8(USART2, '1');
@@ -113,9 +111,6 @@ void process_serial_data(uint8_t ch)
 
 	poc++;
 	return;
-	//keysesitive todo
-
-
 }
 
 

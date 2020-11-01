@@ -1487,17 +1487,17 @@ OUTPUT(vrs_cvicenie_6_UART.elf elf32-littlearm)
  .debug_macro   0x00000000000021f8       0xdc Src/system_stm32f3xx.o
  .debug_macro   0x00000000000022d4      0x143 Src/usart.o
 
-.debug_line     0x0000000000000000     0x3ac9
+.debug_line     0x0000000000000000     0x3ac8
  .debug_line    0x0000000000000000      0x670 Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_ll_gpio.o
  .debug_line    0x0000000000000670      0x74b Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_ll_rcc.o
  .debug_line    0x0000000000000dbb      0x621 Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_ll_usart.o
  .debug_line    0x00000000000013dc      0x764 Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_ll_utils.o
  .debug_line    0x0000000000001b40      0x5a5 Src/gpio.o
- .debug_line    0x00000000000020e5      0x7c5 Src/main.o
- .debug_line    0x00000000000028aa      0x670 Src/stm32f3xx_it.o
- .debug_line    0x0000000000002f1a      0x48a Src/system_stm32f3xx.o
- .debug_line    0x00000000000033a4      0x6a4 Src/usart.o
- .debug_line    0x0000000000003a48       0x81 Startup/startup_stm32f303k8tx.o
+ .debug_line    0x00000000000020e5      0x7c4 Src/main.o
+ .debug_line    0x00000000000028a9      0x670 Src/stm32f3xx_it.o
+ .debug_line    0x0000000000002f19      0x48a Src/system_stm32f3xx.o
+ .debug_line    0x00000000000033a3      0x6a4 Src/usart.o
+ .debug_line    0x0000000000003a47       0x81 Startup/startup_stm32f303k8tx.o
 
 .debug_str      0x0000000000000000    0x6d5c4
  .debug_str     0x0000000000000000    0x645bc Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_ll_gpio.o

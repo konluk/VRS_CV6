@@ -37,11 +37,11 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING
  16 .debug_macro  00002417  00000000  00000000  00025878  2**0
                   CONTENTS, READONLY, DEBUGGING
- 17 .debug_line   00003ac9  00000000  00000000  00027c8f  2**0
+ 17 .debug_line   00003ac8  00000000  00000000  00027c8f  2**0
                   CONTENTS, READONLY, DEBUGGING
- 18 .debug_str    0006d5c4  00000000  00000000  0002b758  2**0
+ 18 .debug_str    0006d5c4  00000000  00000000  0002b757  2**0
                   CONTENTS, READONLY, DEBUGGING
- 19 .comment      0000007b  00000000  00000000  00098d1c  2**0
+ 19 .comment      0000007b  00000000  00000000  00098d1b  2**0
                   CONTENTS, READONLY
  20 .debug_frame  000013c4  00000000  00000000  00098d98  2**2
                   CONTENTS, READONLY, DEBUGGING
@@ -2284,9 +2284,7 @@ int main(void)
  8000de0:	480c      	ldr	r0, [pc, #48]	; (8000e14 <main+0x58>)
  8000de2:	f000 faad 	bl	8001340 <USART2_RegisterCallback>
 
-  //char tx_data = '1';
-
-  while (1)
+   while (1)
   {
 	  if((LL_GPIO_ReadInputPort(GPIOB) & (1 << 3)) >> 3){
  8000de6:	480c      	ldr	r0, [pc, #48]	; (8000e18 <main+0x5c>)
@@ -2562,9 +2560,6 @@ void process_serial_data(uint8_t ch)
  8000fc4:	701a      	strb	r2, [r3, #0]
 	return;
  8000fc6:	bf00      	nop
-	//keysesitive todo
-
-
 }
  8000fc8:	3708      	adds	r7, #8
  8000fca:	46bd      	mov	sp, r7
