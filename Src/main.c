@@ -28,9 +28,10 @@ void SystemClock_Config(void);
 
 void process_serial_data(uint8_t ch);
 
+char pole[6];
+
 int main(void)
 {
-
   LL_APB2_GRP1_EnableClock(LL_APB2_GRP1_PERIPH_SYSCFG);
   LL_APB1_GRP1_EnableClock(LL_APB1_GRP1_PERIPH_PWR);
 
@@ -94,28 +95,27 @@ void SystemClock_Config(void)
 
 void process_serial_data(uint8_t ch)
 {
-	static uint8_t count = 0;
+	static uint8_t poc = 0;
 
-	if(ch == 'a')
-	{
-		count++;
+	pole[poc] = ch;
 
-		if(count >= 3)
-		{
-			if((LL_GPIO_ReadInputPort(GPIOB) & (1 << 3)) >> 3)
-			{
-				LL_GPIO_ResetOutputPin(GPIOB, LL_GPIO_PIN_3);
-			}
-			else
-			{
-				LL_GPIO_SetOutputPin(GPIOB, LL_GPIO_PIN_3);
-			}
+	if(poc == 0 && pole[0] != 'l'){memset(pole, 0, 6); poc=0; return;}
+	if(poc == 1 && pole[1] != 'e'){memset(pole, 0, 6); poc=0; return;}
+	if(poc == 2 && pole[2] != 'd'){memset(pole, 0, 6); poc=0; return;}
+	if(poc == 3 && pole[3] != 'O'){memset(pole, 0, 6); poc=0; return;}
 
-			count = 0;
-			return;
+	if(poc == 4 && pole[4] == 'N'){memset(pole, 0, 6); poc=0; LL_GPIO_SetOutputPin(GPIOB, LL_GPIO_PIN_3); return;} //tuto je bug, zacyklime sa
 
-		}
-	}
+	if(poc == 4 && pole[4] != 'F'){memset(pole, 0, 6); poc=0; return;}
+	if(poc == 5 && pole[5] == 'F'){memset(pole, 0, 6); poc=0; LL_GPIO_ResetOutputPin(GPIOB, LL_GPIO_PIN_3); return;}
+
+	if(poc == 5){memset(pole, 0, 6); poc=0; return;}
+
+	poc++;
+	return;
+	//keysesitive todo
+
+
 }
 
 
