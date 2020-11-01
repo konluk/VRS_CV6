@@ -2478,7 +2478,7 @@ void process_serial_data(uint8_t ch)
  8000f26:	701a      	strb	r2, [r3, #0]
  8000f28:	e04e      	b.n	8000fc8 <process_serial_data+0x13c>
 
-	if(poc == 4 && pole[4] == 'N'){memset(pole, 0, 6); poc=0; LL_GPIO_SetOutputPin(GPIOB, LL_GPIO_PIN_3); return;} //tuto je bug, zacyklime sa
+	if(poc == 4 && pole[4] == 'N'){memset(pole, 0, 6); poc=0; LL_GPIO_SetOutputPin(GPIOB, LL_GPIO_PIN_3); return;}
  8000f2a:	4b29      	ldr	r3, [pc, #164]	; (8000fd0 <process_serial_data+0x144>)
  8000f2c:	781b      	ldrb	r3, [r3, #0]
  8000f2e:	2b04      	cmp	r3, #4
@@ -2498,7 +2498,6 @@ void process_serial_data(uint8_t ch)
  8000f4c:	4822      	ldr	r0, [pc, #136]	; (8000fd8 <process_serial_data+0x14c>)
  8000f4e:	f7ff ff19 	bl	8000d84 <LL_GPIO_SetOutputPin>
  8000f52:	e039      	b.n	8000fc8 <process_serial_data+0x13c>
-
 	if(poc == 4 && pole[4] != 'F'){memset(pole, 0, 6); poc=0; return;}
  8000f54:	4b1e      	ldr	r3, [pc, #120]	; (8000fd0 <process_serial_data+0x144>)
  8000f56:	781b      	ldrb	r3, [r3, #0]

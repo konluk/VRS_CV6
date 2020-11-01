@@ -102,8 +102,7 @@ void process_serial_data(uint8_t ch)
 	if(poc == 2 && pole[2] != 'd'){memset(pole, 0, 6); poc=0; return;}
 	if(poc == 3 && pole[3] != 'O'){memset(pole, 0, 6); poc=0; return;}
 
-	if(poc == 4 && pole[4] == 'N'){memset(pole, 0, 6); poc=0; LL_GPIO_SetOutputPin(GPIOB, LL_GPIO_PIN_3); return;} //tuto je bug, zacyklime sa
-
+	if(poc == 4 && pole[4] == 'N'){memset(pole, 0, 6); poc=0; LL_GPIO_SetOutputPin(GPIOB, LL_GPIO_PIN_3); return;}
 	if(poc == 4 && pole[4] != 'F'){memset(pole, 0, 6); poc=0; return;}
 	if(poc == 5 && pole[5] == 'F'){memset(pole, 0, 6); poc=0; LL_GPIO_ResetOutputPin(GPIOB, LL_GPIO_PIN_3); return;}
 
